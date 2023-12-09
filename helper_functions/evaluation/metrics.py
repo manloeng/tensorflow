@@ -41,6 +41,14 @@ def mean_absolute_scaled_error(y_true, y_pred):
     return mae / mae_naive_no_season
 
 
+def make_preds(model, input_data):
+    """
+    Uses model to make predictions input_data.
+    """
+    forecast = model.predict(input_data)
+    return tf.squeeze(forecast)  # return 1D array of predictions
+
+
 def evaluate_preds(y_true, y_pred):
     # Make sure float32 datatype (for metric calculations)
     y_true = tf.cast(y_true, dtype=tf.float32)
