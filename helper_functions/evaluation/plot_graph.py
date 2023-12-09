@@ -4,7 +4,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 from sklearn.metrics import confusion_matrix
-from data_prep.prep_images import load_and_prep_image
+from helper_functions.data_prep.prep_images import load_and_prep_image
 
 
 def pred_and_plot(model, filename, class_names):
@@ -108,7 +108,7 @@ def compare_historys(original_history, new_history, initial_epochs=5):
     plt.show()
 
 
-def plot_time_series(timesteps, values, format=".", start=0, end=None, label=None):
+def plot_time_series(timesteps, values, format=".", start=0, end=None, label=None, fig=None, ax=None, ):
     """
     Plots timesteps (a series of points in time) against values
     (a series of values across timesteps).
@@ -125,6 +125,9 @@ def plot_time_series(timesteps, values, format=".", start=0, end=None, label=Non
     label : label to show on plot about values, default None
     """
     # Plot the series
+
+    ax.grid()
+    ax.xaxis.set_major_locator(plt.AutoLocator())
     plt.plot(timesteps[start:end], values[start:end], format, label=label)
     plt.xlabel("Time")
     plt.ylabel("BTC Price")
@@ -134,13 +137,13 @@ def plot_time_series(timesteps, values, format=".", start=0, end=None, label=Non
 
 
 def make_confusion_matrix(
-    y_true,
-    y_pred,
-    classes=None,
-    figsize=(10, 10),
-    text_size=15,
-    norm=False,
-    savefig=False,
+        y_true,
+        y_pred,
+        classes=None,
+        figsize=(10, 10),
+        text_size=15,
+        norm=False,
+        savefig=False,
 ):
     """Makes a labelled confusion matrix comparing predictions and ground truth labels.
 
@@ -208,7 +211,7 @@ def make_confusion_matrix(
             plt.text(
                 j,
                 i,
-                f"{cm[i, j]} ({cm_norm[i, j]*100:.1f}%)",
+                f"{cm[i, j]} ({cm_norm[i, j] * 100:.1f}%)",
                 horizontalalignment="center",
                 color="white" if cm[i, j] > threshold else "black",
                 size=text_size,
