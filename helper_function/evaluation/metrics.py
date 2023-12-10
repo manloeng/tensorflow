@@ -40,7 +40,6 @@ def mean_absolute_scaled_error(y_true, y_pred):
 
     return mae / mae_naive_no_season
 
-
 def make_preds(model, input_data):
     """
     Uses model to make predictions input_data.

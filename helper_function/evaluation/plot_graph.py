@@ -4,7 +4,7 @@ import tensorflow as tf
 import matplotlib.pyplot as plt
 
 from sklearn.metrics import confusion_matrix
-from helper_functions.data_prep.prep_images import load_and_prep_image
+from helper_function.data_prep.prep_images import load_and_prep_image
 
 
 def pred_and_plot(model, filename, class_names):

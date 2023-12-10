@@ -1,7 +1,7 @@
 import tensorflow as tf
 
 from bitcoin_predict.utils.index import get_bitcoin_prices
-from helper_functions.data_prep.time_series_data_prep import get_labelled_windows, make_windows, make_train_test_splits
+from helper_function.data_prep.time_series_data_prep import get_labelled_windows, make_windows, make_train_test_splits
 
 
 def prep_data_model_2(window_size=7, horizon=1):

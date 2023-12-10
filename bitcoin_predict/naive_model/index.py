@@ -1,10 +1,9 @@
-import pandas as pd
 import matplotlib.pyplot as plt
 
-from bitcoin_predict.utils.index import show_graph, get_bitcoin_prices
-from helper_functions.data_prep.split_data import split_data
-from helper_functions.evaluation.plot_graph import plot_time_series
-from helper_functions.evaluation.metrics import evaluate_preds
+from bitcoin_predict.utils.index import get_bitcoin_prices
+from helper_function.data_prep.split_data import split_data
+from helper_function.evaluation.plot_graph import plot_time_series
+from helper_function.evaluation.metrics import evaluate_preds
 
 bitcoin_prices = get_bitcoin_prices()
 

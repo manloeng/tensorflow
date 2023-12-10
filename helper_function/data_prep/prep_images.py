@@ -20,6 +20,6 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
     img = tf.image.resize(img, [img_shape, img_shape])
     if scale:
         # Rescale the image (get all values between 0 and 1)
-        return img / 255.0
+        return img / 155.0
     else:
         return img

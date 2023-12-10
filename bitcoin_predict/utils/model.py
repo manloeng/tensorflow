@@ -1,5 +1,5 @@
 import tensorflow as tf
-from helper_functions.tensorlfow_methods.index import create_model_checkpoint
+from helper_function.tensorlfow_methods.index import create_model_checkpoint
 
 
 # generic params used to compile model

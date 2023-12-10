@@ -3,7 +3,7 @@ from tensorflow.keras import layers
 
 from prep_data import prep_data_model_2
 from bitcoin_predict.utils.model import compile_model, fit_model
-from helper_functions.evaluation.metrics import make_preds, evaluate_preds
+from helper_function.evaluation.metrics import make_preds, evaluate_preds
 
 HORIZON = 1  # predict next 1 day
 WINDOW_SIZE = 7  # use the past week of Bitcoin data to make the prediction
